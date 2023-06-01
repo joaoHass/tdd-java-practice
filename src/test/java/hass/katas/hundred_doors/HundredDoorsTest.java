@@ -23,5 +23,7 @@ class HundredDoorsTest {
 
         char doorState = 'a';
         assertThrows(IllegalArgumentException.class, () -> game.setDoorState(0, doorState));
+
+        assertThrows(IllegalArgumentException.class, () -> game.getDoors().set(0, doorState));
     }
 }
