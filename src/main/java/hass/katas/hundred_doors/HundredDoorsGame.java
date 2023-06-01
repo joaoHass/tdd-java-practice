@@ -1,5 +1,6 @@
 package hass.katas.hundred_doors;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
@@ -12,7 +13,7 @@ public class HundredDoorsGame {
     }
 
     public List<Character> getDoors() {
-        return doors;
+        return new ArrayList<>(this.doors);
     }
 
     public void setDoorState(int doorNumber, char state) throws IllegalArgumentException {
