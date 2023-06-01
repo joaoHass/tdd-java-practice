@@ -15,4 +15,13 @@ class HundredDoorsTest {
             assertEquals('#', door);
         }
     }
+
+    @Test
+    @DisplayName("Asserts that doors can only be set open/closed")
+    void testDoorStates_CanOnlyBe_OpenClosed() {
+        HundredDoorsGame game = new HundredDoorsGame();
+
+        char doorState = 'a';
+        assertThrows(Exception.class, () -> game.getDoors().set(0, doorState));
+    }
 }
