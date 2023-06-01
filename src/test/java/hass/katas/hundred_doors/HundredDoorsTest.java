@@ -22,6 +22,6 @@ class HundredDoorsTest {
         HundredDoorsGame game = new HundredDoorsGame();
 
         char doorState = 'a';
-        assertThrows(Exception.class, () -> game.getDoors().set(0, doorState));
+        assertThrows(IllegalArgumentException.class, () -> game.setDoorState(0, doorState));
     }
 }

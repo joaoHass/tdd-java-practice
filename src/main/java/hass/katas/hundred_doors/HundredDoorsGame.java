@@ -15,6 +15,14 @@ public class HundredDoorsGame {
         return doors;
     }
 
+    public void setDoorState(int doorNumber, char state) throws IllegalArgumentException {
+        if (state == '@' || state == '#') {
+            doors.set(doorNumber, state);
+        }
+
+        throw new IllegalArgumentException("Door state can only be open('@') or closed ('#')");
+    }
+
     public void setDoors(List<Character> doors) {
         this.doors = doors;
     }
