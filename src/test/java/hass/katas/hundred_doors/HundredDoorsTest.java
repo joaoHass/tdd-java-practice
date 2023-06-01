@@ -3,6 +3,8 @@ package hass.katas.hundred_doors;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class HundredDoorsTest {
@@ -24,6 +26,8 @@ class HundredDoorsTest {
         char doorState = 'a';
         assertThrows(IllegalArgumentException.class, () -> game.setDoorState(0, doorState));
 
-        assertThrows(IllegalArgumentException.class, () -> game.getDoors().set(0, doorState));
+        List<Character> gameDoorsList = game.getDoors();
+        gameDoorsList.set(0, doorState);
+        assertNotEquals(gameDoorsList, game.getDoors());
     }
 }
