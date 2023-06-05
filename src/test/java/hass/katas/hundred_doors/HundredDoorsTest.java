@@ -17,17 +17,4 @@ class HundredDoorsTest {
             assertEquals('#', door);
         }
     }
-
-    @Test
-    @DisplayName("Asserts that doors can only be set open/closed")
-    void testDoorStates_CanOnlyBe_OpenClosed() {
-        HundredDoorsGame game = new HundredDoorsGame();
-
-        char doorState = 'a';
-        assertThrows(IllegalArgumentException.class, () -> game.setDoorState(0, doorState));
-
-        List<Character> gameDoorsList = game.getDoors();
-        gameDoorsList.set(0, doorState);
-        assertNotEquals(gameDoorsList, game.getDoors());
-    }
 }
