@@ -7,6 +7,7 @@ import java.util.List;
 
 public class HundredDoorsGame {
     private List<Character> doors = Arrays.asList(new Character[100]);
+    private Integer _numberOfPasses = 0;
 
     public HundredDoorsGame() {
         Collections.fill(doors, '#');
@@ -22,5 +23,11 @@ public class HundredDoorsGame {
 
     public void setDoors(List<Character> doors) {
         this.doors = doors;
+    }
+
+    public void pass() {
+        for (int i = 0; i < doors.size(); i++) {
+            doors.set(i, DoorStates.OPEN.state);
+        }
     }
 }
